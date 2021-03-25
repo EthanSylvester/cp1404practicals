@@ -4,10 +4,7 @@ while email != "":
     name = email.split("@")[0].split(".")
     name = " ".join(name)
     name = name.title()
-    confirm = input("Is your name {}? (Y/n) ".format(name)).lower()
-    if confirm == "n":
-        name = input("Name: ").title()
-    elif confirm == "no":
+    if input("Is your name {}? (Y/n) ".format(name)).lower() in ["n", "no"]:
         name = input("Name: ").title()
     email_and_names[name] = email
     email = input("Email: ")
