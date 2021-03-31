@@ -1,5 +1,4 @@
-user_text = input("Text: ")
-user_text = user_text.split()
+user_text = input("Text: ").split()
 longest = 1
 for i in user_text:
     if len(i) > longest:
