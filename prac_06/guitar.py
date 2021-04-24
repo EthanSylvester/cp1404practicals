@@ -9,8 +9,7 @@ class Guitar:
         return "{} ({}) : ${:10,.2f}".format(self.name, self.year, self.cost)
 
     def get_age(self):
-        age = 2021 - self.year
-        return age
+        return 2021 - self.year
 
     def is_vintage(self):
         if self.get_age() >= 50:
