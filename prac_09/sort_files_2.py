@@ -14,5 +14,8 @@ for directory, subdirectories, filenames in os.walk("."):
             else:
                 sub_reference[sub_name] = [file_type]
                 os.mkdir(sub_name)
-            print(sub_reference)
             check.append(file_type)
+        for key in sub_reference.keys():
+            if file_type in sub_reference[key]:
+                key_ref = key
+        shutil.move(file, "{}/".format(key_ref))
