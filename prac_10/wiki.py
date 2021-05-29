@@ -14,3 +14,5 @@ while entry != "":
             print(webpage.url)
         except wikipedia.exceptions.PageError:
             print(f"{entry} page does not exist. Please try another name.")
+        except wikipedia.exceptions.DisambiguationError as error:
+            print(", ".join(error.options))
