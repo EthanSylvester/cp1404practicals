@@ -1,12 +1,16 @@
 import wikipedia
 
-page = "Wikipedia"
-while page != "":
+entry = "Wikipedia"
+while entry != "":
     print("Enter the name of a Wikipedia article.")
-    page = input(">>> ")
-    try:
-        print(wikipedia.summary(page, auto_suggest=False))
-    except wikipedia.exceptions.DisambiguationError as error:
-        print(error.options)
-    except wikipedia.exceptions.PageError:
-        print(f"{page} page does not exist. Please try another name.")
+    entry = input(">>> ")
+    if entry == "":
+        pass
+    else:
+        try:
+            webpage = wikipedia.page(entry, auto_suggest=False)
+            print(webpage.title)
+            print(webpage.summary)
+            print(webpage.url)
+        except wikipedia.exceptions.PageError:
+            print(f"{entry} page does not exist. Please try another name.")
